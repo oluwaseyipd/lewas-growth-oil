@@ -1,0 +1,67 @@
+---
+description: Core rules, conventions, and architectural guidelines for the Lewa's Growth Oil website project.
+globs:
+alwaysApply: true
+---
+
+
+## Project Overview: Lewa's Growth Oil Website
+You are an expert full-stack developer working on the Lewa’s Growth Oil codebase. Your primary goal is to build a clean, elegant, and responsive marketing website for Lewa’s Growth Oil. The site must highlight the brand’s organic and natural identity, ensure smooth navigation, and maintain design consistency across pages.
+
+Adhere strictly to the rules, patterns, and conventions outlined in this document to ensure code quality, consistency, and maintainability.
+
+## Technology Stack
+The project uses the following technologies. Do not introduce new libraries or frameworks without explicit instruction.
+
+- Language: TypeScript
+- Main Framework: Next.js (App Router)
+- Styling: Tailwind CSS with shadcn/ui components
+- State Management: Minimal, prefer Server Components. Use useState/useReducer for small local states where interactivity is required.
+- API Communication: If needed, use Next.js Server Actions. Otherwise, focus on static/SSR content for performance and SEO.
+
+## Architecture & Code Style
+
+- Directory Structure: Follow the standard Next.js App Router structure.
+  - `/app` for routes and pages.
+  - `/components/ui` for `shadcn/ui` components.
+  - `/components/` for brand-specific reusable components (Navbar, Footer, ProductCard, Testimonial).
+  - `/lib` for utility functions and helper logic.
+
+- Component Design: 
+  - Prefer Server Components for static/SEO-friendly content.
+  - Use Client Components (`'use client'`) only where interactivity is required (e.g., forms, toggles, navigation menus).
+
+- Naming Conventions:
+  - Component files should be **PascalCase** (e.g., ProductCard.tsx).
+  - Utility and helper functions should be **camelCase** (e.g., formatPrice.ts).
+  - Pages and routes should use **lowercase-hyphen** (e.g., `/about-us`).
+
+- Styling Guidelines:
+  - Use Tailwind CSS for utility-first styling.
+  - Use shadcn/ui for base UI components to ensure consistency.
+  - Adhere to the brand’s **primary color (pink)** while maintaining a **soft, natural, and elegant** aesthetic.
+  - Use spacing, rounded corners, and soft shadows to reflect an organic and clean look.
+
+- Error Handling:
+  - Use Next.js `error.tsx` files for route-level error boundaries.
+  - Catch unexpected UI errors gracefully with fallback UI.
+
+- Assets:
+  - Store images (logo, product images) in `/public/assets`.
+  - Optimize images using Next.js `<Image />`.
+
+## Code Patterns to Follow
+- Prefer semantic HTML (`<section>`, `<article>`, `<header>`, `<footer>`) for SEO and accessibility.
+- Use Next.js Metadata API for SEO-friendly titles, descriptions, and open graph tags.
+- Use reusable components (e.g., `Button`, `Card`, `SectionTitle`) for consistency.
+- Keep business logic (e.g., form handling, validation) minimal and centralized in helpers or Server Actions.
+- Do not hardcode secrets or API keys. Use `.env.local` and `process.env`.
+
+## Verification Checklist
+Before finalizing your code, verify the following:
+- Does the code use Next.js App Router and follow the `/app` directory conventions?
+- Are Server Components used for static content and SEO?
+- Are Client Components used only where interactivity is needed?
+- Is Tailwind CSS and shadcn/ui used consistently for styling?
+- Does the design reflect Lewa’s brand identity (pink, organic, soft, elegant)?
+- Are environment variables used for secrets (no hardcoding)?
