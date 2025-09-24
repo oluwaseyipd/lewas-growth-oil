@@ -1,6 +1,7 @@
 "use client";
 import { Quote, Star } from "lucide-react";
 import * as React from "react";
+import { Button } from "@/components/ui/button";
 
 // Example testimonials data (replace or fetch as needed)
 const testimonials = [
@@ -181,12 +182,39 @@ export default function TestimonialsPreview() {
       <div className="max-w-6xl mx-auto px-4">
         <h2
           id="testimonials-heading"
-          className="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--color-primary)]"
+          className="text-3xl md:text-4xl font-bold text-center mb-2 text-[color:var(--color-primary)]"
         >
           What Our Customers Say
         </h2>
-        {/* Two continuous sliders */}
-        <div className="flex flex-col gap-6">
+        <p className="text-center text-base md:text-lg text-[color:var(--color-neutral-charcoal)]/80 mb-8">
+          Real stories, real results—see how Lewa’s Growth Oil is making a
+          difference for our community.
+        </p>
+        {/* Mobile: 4 testimonials vertically + button */}
+        <div className="block md:hidden">
+          <div className="flex flex-col gap-6 items-center">
+            {testimonials.slice(0, 4).map((t, idx) => (
+              <TestimonialCard
+                key={t.name + idx}
+                name={t.name}
+                message={t.message}
+                rating={t.rating}
+              />
+            ))}
+            <a href="/testimonials" className="w-full flex justify-center mt-4">
+              <Button
+                variant="default"
+                size="lg"
+                className="rounded-full bg-pink-500 hover:bg-pink-600 shadow-md px-7 py-3 text-base font-semibold transition-all"
+                asChild
+              >
+                <span>See More Testimonials</span>
+              </Button>
+            </a>
+          </div>
+        </div>
+        {/* md+: slider rows */}
+        <div className="hidden md:flex flex-col gap-6">
           <InfiniteSliderRow
             testimonials={testimonials}
             reverse={false}

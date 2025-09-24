@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AboutPreview from "@/components/AboutPreview";
+import AboutSection from "@/components/AboutSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsPreview from "@/components/TestimonialsPreview";
@@ -18,10 +18,8 @@ export default function HomePage() {
         {/* Hero Section */}
         <Hero />
 
-        {/* About Preview */}
-        <section className="w-full max-w-5xl mx-auto px-4 mt-12">
-          <AboutPreview />
-        </section>
+        {/* About Section */}
+        <AboutSection />
 
         {/* Featured Products */}
         <section className="w-full mt-12">
@@ -44,7 +42,7 @@ export default function HomePage() {
         </section>
 
         {/* Strong CTA Section */}
-        <section className="w-full mt-12">
+        <section className="w-full">
           <CTASection />
         </section>
       </main>

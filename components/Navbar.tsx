@@ -40,14 +40,15 @@ export function Navbar() {
         <div className="flex items-center flex-shrink-0">
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-1"
             aria-label="Lewa’s Growth Oil Home"
           >
-            {/* Replace with actual logo image if available */}
-            <span className="inline-block w-8 h-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-bold text-[var(--color-neutral-white)] text-lg shadow-md">
-              L
-            </span>
-            <span className="ml-2 font-semibold text-lg tracking-tight text-[var(--color-primary)]">
+            <img
+              src="https://res.cloudinary.com/ddk9omr4r/image/upload/lewas-growth-oil-logo_l8gsjy.png"
+              alt="Lewa’s Growth Oil Logo"
+              className="w-10 md:w-16 h-10 md:h-16 object-cover"
+            />
+            <span className="font-semibold text-xl tracking-tight text-black">
               Lewa’s Growth Oil
             </span>
           </Link>
