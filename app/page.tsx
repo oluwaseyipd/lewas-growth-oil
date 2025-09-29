@@ -6,6 +6,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsPreview from "@/components/TestimonialsPreview";
 import HowItWorks from "@/components/HowItWorks";
 import CTASection from "@/components/CTASection";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
 export default function HomePage() {
@@ -14,7 +15,7 @@ export default function HomePage() {
       {/* Sticky Floating Navbar */}
       <Navbar />
 
-      <main className="flex flex-col items-center w-full bg-[var(--background)]">
+      <main className="relative flex flex-col items-center w-full bg-[var(--background)]">
         {/* Hero Section */}
         <Hero />
 
@@ -45,6 +46,8 @@ export default function HomePage() {
         <section className="w-full">
           <CTASection />
         </section>
+
+        <FloatingWhatsApp />
       </main>
 
       {/* Footer */}

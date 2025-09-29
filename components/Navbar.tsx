@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -31,7 +32,7 @@ export function Navbar() {
     <header className={cn("fixed top-4 z-50 flex justify-center w-full")}>
       <nav
         className={cn(
-          "bg-white/90 backdrop-blur-md shadow-lg rounded-full mx-2 w-full max-w-5xl flex items-center px-4 py-4",
+          "bg-white/90 backdrop-blur-md shadow-lg rounded-full mx-2 w-full max-w-5xl flex items-center px-4 py-2 md:py-0",
           "border border-gray-100",
         )}
         aria-label="Main navigation"
@@ -56,18 +57,29 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex flex-1 items-center justify-end gap-2">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "px-4 py-3 rounded-full font-medium text-sm transition-colors",
-                "text-[var(--color-neutral-charcoal)] hover:bg-[var(--color-secondary-soft-beige)] hover:text-[var(--color-primary)]",
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {(() => {
+            const pathname = usePathname();
+            return NAV_LINKS.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "px-4 py-3 rounded-full font-medium text-sm transition-colors",
+                    isActive
+                      ? "bg-[var(--color-secondary-soft-beige)] text-[var(--color-primary)]"
+                      : "text-[var(--color-neutral-charcoal)] hover:bg-[var(--color-secondary-soft-beige)] hover:text-[var(--color-primary)]",
+                  )}
+                >
+                  {link.name}
+                </Link>
+              );
+            });
+          })()}
         </div>
 
         {/* Hamburger/X Menu (Mobile) */}
@@ -86,19 +98,30 @@ export function Navbar() {
         {/* Mobile Dropdown */}
         {mobileOpen && (
           <div className="absolute right-4 top-22 w-64 bg-white rounded-xl shadow-2xl p-6 flex flex-col gap-4 animate-dropdown border border-gray-100 z-50">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "px-3 py-2 rounded-lg font-medium text-base transition-colors",
-                  "text-[var(--color-neutral-charcoal)] hover:bg-[var(--color-secondary-soft-beige)] hover:text-[var(--color-primary)]",
-                )}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {(() => {
+              const pathname = usePathname();
+              return NAV_LINKS.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "px-3 py-2 rounded-lg font-medium text-base transition-colors",
+                      isActive
+                        ? "bg-[var(--color-secondary-soft-beige)] text-[var(--color-primary)]"
+                        : "text-[var(--color-neutral-charcoal)] hover:bg-[var(--color-secondary-soft-beige)] hover:text-[var(--color-primary)]",
+                    )}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              });
+            })()}
             <Button
               asChild
               className="mt-4 bg-[var(--color-primary)] text-[var(--color-neutral-white)] hover:bg-[var(--color-primary)]/90 rounded-xl shadow"

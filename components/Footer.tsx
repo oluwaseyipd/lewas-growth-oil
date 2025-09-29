@@ -13,6 +13,7 @@ const footerLinks = [
   { label: "Products", href: "/products" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Contact", href: "/contact" },
+  { label: "Faq", href: "/faq" },
 ];
 
 const socials = [

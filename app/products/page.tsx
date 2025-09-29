@@ -1,8 +1,13 @@
-export default function ProductsPage() {
-  return (
-    <div>
-      <h1>Our Products</h1>
-      {/* Product List */}
-    </div>
-  );
-}
+import Navbar from "@/components/Navbar";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Footer from "@/components/Footer";
+
+const products = () => (
+  <main className="relative">
+    <Navbar />
+    <FloatingWhatsApp />
+    <Footer />
+  </main>
+);
+
+export default products;
