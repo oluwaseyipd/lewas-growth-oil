@@ -1,0 +1,17 @@
+
+const WHATSAPP = [
+
+    {
+        request: 'order',
+        message: ''
+    },
+
+    {
+        request: 'enquiry',
+        message: ''
+    },
+] 
+
+const TESTIMONIES =[
+    
+]
