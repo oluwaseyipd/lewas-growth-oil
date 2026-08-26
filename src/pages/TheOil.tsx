@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
+import { productFaqs } from '../REUSABLES'
 
 // imsages
 import PRODUCT from '/product-img.png'
@@ -75,24 +76,7 @@ const steps = [
   },
 ]
 
-const productFaqs = [
-  {
-    q: 'Will it make my hair greasy?',
-    a: 'No. Lewa\'s Growth Oil is formulated to absorb quickly without residue. Start with 5–6 drops and adjust to your hair\'s thickness and length.',
-  },
-  {
-    q: 'Can I use it on colour-treated hair?',
-    a: 'Absolutely. The formula contains no harsh chemicals that would interfere with colour. In fact, the nourishing oils help maintain vibrancy and reduce colour-related brittleness.',
-  },
-  {
-    q: 'Is it safe during pregnancy?',
-    a: 'The formula does not contain essential oils at therapeutic doses, but as with all topical products, we recommend consulting your midwife or doctor during pregnancy.',
-  },
-  {
-    q: 'How long does one bottle last?',
-    a: 'With typical use (3× per week), a 100ml bottle lasts 6–8 weeks. A 50ml bottle is ideal for travel or first-time buyers.',
-  },
-]
+
 
 export default function TheOil() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)

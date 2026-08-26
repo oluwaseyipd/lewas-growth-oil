@@ -3,8 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import logow from '/logo.png'
 import logoc from '/logo-2.png'
 
-const WA_LINK =
-  "https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20order%20Lewa's%20Growth%20Oil%20%F0%9F%91%91"
+import { WHATSAPP } from '../REUSABLES'
+
+const WA_LINK = WHATSAPP.find((w) => w.request === 'order')?.message || ''
 
 const links = [
   { label: 'Home', to: '/' },

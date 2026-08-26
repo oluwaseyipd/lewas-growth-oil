@@ -1,5 +1,6 @@
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
+import { WHATSAPP, phoneNumberFormatted } from '../REUSABLES'
 
 export default function Contact() {
   return (
@@ -38,13 +39,13 @@ export default function Contact() {
                 WhatsApp & Phone
               </p>
               <a
-                href="https://wa.me/254700000000"
+                href={WHATSAPP.find((w) => w.request === 'enquiry')?.message || ''}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-display text-2xl transition-opacity hover:opacity-60"
                 style={{ color: '#110E0C' }}
               >
-                +254 700 000 000
+                {phoneNumberFormatted}
               </a>
             </div>
 

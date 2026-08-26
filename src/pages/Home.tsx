@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
+import { TESTIMONIES, faqs } from '../REUSABLES'
 
 // images
 import FOUNDER from '/lewa-img.png'
@@ -58,45 +59,7 @@ const benefits = [
   },
 ]
 
-const testimonials = [
-  {
-    quote: "My edges are back after years of tension damage. Lewa's is the only thing that actually worked.",
-    name: 'Amara K.',
-    location: 'Nairobi',
-    stars: 5,
-  },
-  {
-    quote: "It smells incredible and my scalp no longer itches. I see new baby hairs every week now.",
-    name: 'Fatou D.',
-    location: 'Lagos',
-    stars: 5,
-  },
-  {
-    quote: "I was skeptical but this oil genuinely transformed my 4C hair. Soft, strong, and growing.",
-    name: 'Blessing O.',
-    location: 'London',
-    stars: 5,
-  },
-]
 
-const faqs = [
-  {
-    q: 'How soon will I see results?',
-    a: 'Most customers notice softer, more moisturised hair within the first week. Visible growth and reduced breakage is typically seen from week 3–6 with consistent use.',
-  },
-  {
-    q: 'Is it suitable for all hair types?',
-    a: "Yes. Lewa's Growth Oil is formulated for all natural and chemically-treated hair types — from 3A curls to 4C coils, and everything in between.",
-  },
-  {
-    q: 'How do I place an order?',
-    a: "Simply tap any \"Chat to Order\" button and we'll connect with you directly on WhatsApp. We guide you through sizes, delivery, and payment — it takes under 5 minutes.",
-  },
-  {
-    q: 'Are the ingredients natural?',
-    a: 'Absolutely. Our formula is built on plant-derived, cold-pressed oils with no mineral oil, silicones, parabens, or synthetic fragrance.',
-  },
-]
 
 function Stars({ count }: { count: number }) {
   return (
@@ -343,7 +306,7 @@ export default function Home() {
             <HaloArc color="#EF00C2" className="mt-6" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
+            {TESTIMONIES.map((t) => (
               <div
                 key={t.name}
                 className="rounded-2xl p-8"
@@ -354,7 +317,6 @@ export default function Home() {
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <p className="font-body font-semibold text-sm" style={{ color: '#110E0C' }}>{t.name}</p>
-                <p className="font-body text-xs mt-0.5" style={{ color: '#110E0C', opacity: 0.6 }}>{t.location}</p>
               </div>
             ))}
           </div>

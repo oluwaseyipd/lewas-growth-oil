@@ -5,8 +5,9 @@ interface WAButtonProps {
   light?: boolean
 }
 
-const WA_LINK =
-  "https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20order%20Lewa's%20Growth%20Oil%20%F0%9F%91%91"
+import { WHATSAPP } from '../REUSABLES'
+
+const WA_LINK = WHATSAPP.find((w) => w.request === 'order')?.message || ''
 
 export default function WAButton({ label = "Chat to Order on WhatsApp", className = '', large = false, light = false }: WAButtonProps) {
   return (
