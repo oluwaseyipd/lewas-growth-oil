@@ -74,16 +74,8 @@ function Stars({ count }: { count: number }) {
 }
 
 export default function Home() {
-  const [currentFaqIndex, setCurrentFaqIndex] = useState<number>(0)
+    const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState<number>(0)
-
-  const handlePrev = () => {
-    setCurrentFaqIndex((prev) => (prev === 0 ? faqs.length - 1 : prev - 1))
-  }
-
-  const handleNext = () => {
-    setCurrentFaqIndex((prev) => (prev === faqs.length - 1 ? 0 : prev + 1))
-  }
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev === 0 ? TESTIMONIES.length - 1 : prev - 1))
@@ -380,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ preview ── */}
-      <section style={{ backgroundColor: '#EFD3C5' }}>
+ <section style={{ backgroundColor: '#EFD3C5' }}>
         <div className="max-w-3xl mx-auto px-6 py-20 md:py-28">
           <div className="text-center mb-14">
             <p className="font-body text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#EF00C2' }}>
@@ -392,58 +384,37 @@ export default function Home() {
             <HaloArc color="#EF00C2" className="mt-6" />
           </div>
 
-          <div className="relative overflow-hidden" style={{ minHeight: '220px' }}>
-            <div
-              key={currentFaqIndex}
-              className="rounded-2xl p-8 md:p-10 animate-slide-in"
-              style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(239,211,197,0.8)' }}
-            >
-              <h3 className="font-display text-xl md:text-2xl font-semibold mb-4" style={{ color: '#110E0C' }}>
-                {faqs[currentFaqIndex].q}
-              </h3>
-              <p className="font-body text-base leading-relaxed" style={{ color: '#110E0C', opacity: 0.8 }}>
-                {faqs[currentFaqIndex].a}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between mt-8 max-w-xs mx-auto">
-            <button
-              onClick={handlePrev}
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-white hover:scale-105 active:scale-95 cursor-pointer"
-              style={{ borderColor: 'rgba(239,0,194,0.3)', color: '#EF00C2' }}
-              aria-label="Previous question"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div className="flex gap-2">
-              {faqs.map((_, index) => (
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className="rounded-2xl overflow-hidden"
+                style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(239,211,197,0.8)' }}
+              >
                 <button
-                  key={index}
-                  onClick={() => setCurrentFaqIndex(index)}
-                  className="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer"
-                  style={{
-                    backgroundColor: currentFaqIndex === index ? '#EF00C2' : 'rgba(239,0,194,0.2)',
-                    transform: currentFaqIndex === index ? 'scale(1.2)' : 'scale(1)',
-                  }}
-                  aria-label={`Go to question ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={handleNext}
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-white hover:scale-105 active:scale-95 cursor-pointer"
-              style={{ borderColor: 'rgba(239,0,194,0.3)', color: '#EF00C2' }}
-              aria-label="Next question"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+                  className="w-full flex justify-between items-start gap-4 px-7 py-5 text-left"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                >
+                  <span className="font-body font-semibold text-base" style={{ color: '#110E0C' }}>{faq.q}</span>
+                  <span
+                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300"
+                    style={{
+                      backgroundColor: '#EF00C2',
+                      transform: openFaq === i ? 'rotate(45deg)' : 'none',
+                    }}
+                  >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="white">
+                      <path d="M5 2v6M2 5h6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-7 pb-6">
+                    <p className="font-body text-sm leading-relaxed" style={{ color: '#110E0C', opacity: 0.75 }}>{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
