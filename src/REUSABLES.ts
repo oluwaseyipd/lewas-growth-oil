@@ -24,6 +24,13 @@ export interface FAQGroup {
 // Constants
 export const phoneNumber = '2349021801964'
 export const phoneNumberFormatted = '+234 902 180 1964'
+export const email = 'omolewaglory38@gmail.com'
+export const instagramUrl = 'https://www.instagram.com/omo_lewa05'
+export const tiktokUrl = 'https://www.tiktok.com/@queen_lewa02'
+export const facebookUrl = 'https://www.facebook.com/glory.omolewa.5'
+export const instagramHandle = '@omo_lewa05'
+export const tiktokHandle = '@queen_lewa02'
+export const facebookHandle = 'Glory Omolewa'
 
 export const WHATSAPP: WhatsAppItem[] = [
     {

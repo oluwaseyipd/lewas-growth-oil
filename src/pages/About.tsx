@@ -39,28 +39,34 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-16 items-start">
           <div>
             <HaloArc color="#EF00C2" className="justify-start mb-10" />
+            <h2 className="font-display text-3xl md:text-4xl font-semibold mb-6" style={{ color: '#110E0C' }}>
+              Inspired by Family, Refined by Science
+            </h2>
             <p className="font-body text-base leading-relaxed mb-6" style={{ color: '#110E0C', maxWidth: '60ch' }}>
-              Lewa grew up in a household where hair care was a ceremony. Every Saturday morning, her grandmother would sit her down, section her hair with a wide-tooth comb, and work her handmade oil blend through each strand — patient, precise, full of stories.
+              The recipe isn’t from a factory, it’s a heritage. I learnt the process of blending these rich, nourishing oils from my mum, watching how natural ingredients could revive tired strands. I began making small batches for myself and used it faithfully, and soon my own hair told the story: stronger roots, fuller volume, and a healthy, dandruff-free scalp.
             </p>
             <p className="font-body text-base leading-relaxed mb-6" style={{ color: '#110E0C', opacity: 0.8, maxWidth: '60ch' }}>
-              The blend was never written down. It lived in her grandmother&apos;s hands — knowledge passed between women, the way it had always been. When Lewa moved abroad for university, she realised she&apos;d taken that knowledge for granted. Store shelves offered dozens of products, but none felt like home.
+              Seeing those results, I couldn’t keep it to myself. Friends noticed the difference, and I realized many women around me were struggling, sometimes simply because hair care felt like one more chore. I wanted to change that by offering a product that makes consistent care easy and rewarding.
+            </p>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: '#110E0C', opacity: 0.8, maxWidth: '60ch' }}>
+              Glory Omolewa Adepoju is a graduate of Science Laboratory Technology and the founder of Lewa’s Growth Oil, a natural hair-care brand she developed after crafting and testing a formula that transformed her own hair. Driven by a love for healthy, thriving hair, she combines scientific knowledge with natural ingredients to help others achieve stronger, dandruff-free strands.
             </p>
             <p className="font-body text-base leading-relaxed mb-10" style={{ color: '#110E0C', opacity: 0.8, maxWidth: '60ch' }}>
-              So she called home. She asked questions she&apos;d never thought to ask. She experimented, researched, and — over two years — she refined a formula she could be proud of. One that worked for her 4C hair, her sister&apos;s 3B curls, and the relaxed hair of women in her community.
+              Beyond her brand, Glory is a public-speaking enthusiast eager to grow in that field. She also enjoys modeling and influencing, often creating personal photos and videos to share her style and creativity across platforms.
             </p>
             <blockquote
-              className="font-display text-2xl italic leading-relaxed pl-6"
+              className="font-display text-2xl italic leading-relaxed pl-6 mb-6"
               style={{ color: '#110E0C', borderLeft: '3px solid #EF00C2' }}
             >
-              &ldquo;Every woman&apos;s crown deserves the kind of care that&apos;s been refined over generations — not just formulated in a lab.&rdquo;
+              &ldquo;LEWA’S GROWTH Oil was born from a simple idea: every woman deserves a crown that flourishes. What started as a quiet plan for the year quickly grew into a heartfelt mission to help others fall in love with their hair again.&rdquo;
             </blockquote>
-            <p className="font-body text-sm mt-4 font-semibold" style={{ color: '#EF00C2' }}>— Lewa, Founder</p>
+            <p className="font-body text-sm font-semibold" style={{ color: '#EF00C2' }}>— Glory Omolewa Adepoju, Founder</p>
           </div>
 
           <div>
             <img
               src={FOUNDER2_IMG}
-              alt="Lewa in her element"
+              alt="Glory Omolewa Adepoju, founder of Lewa's Growth Oil"
               className="w-full rounded-2xl object-cover"
               style={{ aspectRatio: '4/5', backgroundColor: '#EFD3C5' }}
             />
@@ -73,10 +79,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
           <div className="text-center mb-16">
             <p className="font-body text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#EF00C2' }}>
-              What drives us
+              Our Purpose
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold" style={{ color: '#110E0C', lineHeight: 1.12 }}>
-              Our values, clearly stated.
+              What we believe & aspire to.
             </h2>
             <HaloArc color="#EF00C2" className="mt-6" />
           </div>
@@ -84,27 +90,28 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                label: 'Heritage',
-                body: 'We honour the intergenerational wisdom embedded in plant-based hair care traditions. Our formulas are informed by knowledge that predates product marketing.',
+                label: 'What We Believe',
+                body: 'At LEWA’S GROWTH Oil, we believe that beautiful hair begins with a healthy scalp and a little daily love. Our goal is to help every woman nurture her natural texture, remove dandruff and buildup, and enjoy hair that is strong, soft, and radiant.',
               },
               {
-                label: 'Transparency',
-                body: 'Every ingredient is listed clearly, with no proprietary blend hiding behind a vague "fragrance." You know exactly what you&apos;re putting on your scalp.',
+                label: 'Our Vision',
+                body: 'Maintaining healthy hair, a dandruff-free scalp, and increasing growth on every side of the hair, bringing out the ultimate natural beauty of every crown.',
               },
               {
-                label: 'Inclusivity',
-                body: 'Lewa&apos;s is made for every hair texture, every curl pattern, every woman who deserves to see her hair thrive. There is no one way to have beautiful hair.',
+                label: 'Our Heritage',
+                body: 'Our recipe isn’t from a factory, it’s a heritage. Learned from a mother\'s process of blending rich, nourishing oils, every bottle is a promise of quality, tradition, and care.',
               },
             ].map((v) => (
               <div
                 key={v.label}
-                className="rounded-2xl p-10"
+                className="rounded-2xl p-10 flex flex-col justify-between"
                 style={{ backgroundColor: '#FFFFFF' }}
               >
-                <div className="w-8 h-1 rounded mb-6" style={{ backgroundColor: '#EF00C2' }} />
-                <h3 className="font-display text-2xl font-semibold mb-4" style={{ color: '#110E0C' }}>{v.label}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: '#110E0C', opacity: 0.75 }}
-                  dangerouslySetInnerHTML={{ __html: v.body }} />
+                <div>
+                  <div className="w-8 h-1 rounded mb-6" style={{ backgroundColor: '#EF00C2' }} />
+                  <h3 className="font-display text-2xl font-semibold mb-4" style={{ color: '#110E0C' }}>{v.label}</h3>
+                  <p className="font-body text-sm leading-relaxed text-balance" style={{ color: '#110E0C', opacity: 0.75 }}>{v.body}</p>
+                </div>
               </div>
             ))}
           </div>
