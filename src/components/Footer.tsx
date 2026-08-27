@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import logow from '/logo.png'
 import HaloArc from './HaloArc'
-import { WHATSAPP, phoneNumberFormatted } from '../REUSABLES'
+import { WHATSAPP, phoneNumberFormatted, type WhatsAppItem } from '../REUSABLES'
 
 export default function Footer() {
   return (
@@ -44,7 +44,7 @@ export default function Footer() {
                 Connect
               </p>
               <a
-                href={WHATSAPP.find((w) => w.request === 'enquiry')?.message || ''}
+                href={WHATSAPP.find((w: WhatsAppItem) => w.request === 'enquiry')?.message || ''}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block font-body text-sm mb-3 transition-colors hover:text-[#EF00C2]"

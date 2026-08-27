@@ -1,7 +1,31 @@
+// Type definitions
+export interface WhatsAppItem {
+  request: 'order' | 'enquiry'
+  message: string
+}
+
+export interface Testimony {
+  quote: string
+  name: string
+  stars: number
+}
+
+export interface FAQ {
+  q: string
+  a: string
+}
+
+export interface FAQGroup {
+  group: string
+  icon: string
+  items: FAQ[]
+}
+
+// Constants
 export const phoneNumber = '2349021801964'
 export const phoneNumberFormatted = '+234 902 180 1964'
 
-export const WHATSAPP = [
+export const WHATSAPP: WhatsAppItem[] = [
     {
         request: 'order',
         message: `https://wa.me/${phoneNumber}?text=Hi%2C%20I'd%20like%20to%20order%20Lewa's%20Growth%20Oil%20%F0%9F%91%91`
@@ -12,7 +36,7 @@ export const WHATSAPP = [
     },
 ] 
 
-export const TESTIMONIES = [
+export const TESTIMONIES: Testimony[] = [
     {
         quote: "Lewa’s Growth Oil reduced my hair breakage and kept my scalp clean. Clean scalp all the way! Please don’t stop the production—keep it coming!",
         name: 'Covenant',
@@ -90,7 +114,7 @@ export const TESTIMONIES = [
     }
 ]
 
-export const faqGroups = [
+export const faqGroups: FAQGroup[] = [
   {
     group: 'Ordering & Delivery',
     icon: '📦',
@@ -159,7 +183,7 @@ export const faqGroups = [
   },
 ]
 
-export const productFaqs = [
+export const productFaqs: FAQ[] = [
   {
     q: 'Will it make my hair greasy?',
     a: 'No. Lewa\'s Growth Oil is formulated to absorb quickly without residue. Start with 5–6 drops and adjust to your hair\'s thickness and length.',
@@ -178,7 +202,7 @@ export const productFaqs = [
   },
 ]
 
-export const faqs = [
+export const faqs: FAQ[] = [
   {
     q: 'How soon will I see results?',
     a: 'Most customers notice softer, more moisturised hair within the first week. Visible growth and reduced breakage is typically seen from week 3–6 with consistent use.',

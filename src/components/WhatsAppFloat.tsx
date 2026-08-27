@@ -1,6 +1,6 @@
-import { WHATSAPP } from '../REUSABLES'
+import { WHATSAPP, type WhatsAppItem } from '../REUSABLES'
 
-const WA_LINK = WHATSAPP.find((w) => w.request === 'order')?.message || ''
+const WA_LINK = WHATSAPP.find((w: WhatsAppItem) => w.request === 'order')?.message || ''
 
 export default function WhatsAppFloat() {
   return (

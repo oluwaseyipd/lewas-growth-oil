@@ -5,9 +5,9 @@ interface WAButtonProps {
   light?: boolean
 }
 
-import { WHATSAPP } from '../REUSABLES'
+import { WHATSAPP, type WhatsAppItem } from '../REUSABLES'
 
-const WA_LINK = WHATSAPP.find((w) => w.request === 'order')?.message || ''
+const WA_LINK = WHATSAPP.find((w: WhatsAppItem) => w.request === 'order')?.message || ''
 
 export default function WAButton({ label = "Chat to Order on WhatsApp", className = '', large = false, light = false }: WAButtonProps) {
   return (

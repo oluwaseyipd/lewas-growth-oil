@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
-import { productFaqs } from '../REUSABLES'
+import { productFaqs, type FAQ } from '../REUSABLES'
 
 // imsages
 import PRODUCT from '/product-img.png'
@@ -209,7 +209,7 @@ export default function TheOil() {
             <HaloArc color="#EF00C2" className="mt-6" />
           </div>
           <div className="space-y-3">
-            {productFaqs.map((faq, i) => (
+            {productFaqs.map((faq: FAQ, i: number) => (
               <div
                 key={i}
                 className="rounded-2xl overflow-hidden"

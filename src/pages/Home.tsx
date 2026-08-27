@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
-import { TESTIMONIES, faqs } from '../REUSABLES'
+import { TESTIMONIES, faqs, type FAQ } from '../REUSABLES'
 
 // images
 import FOUNDER from '/lewa-img.png'
@@ -385,7 +385,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-3">
-            {faqs.map((faq, i) => (
+            {faqs.map((faq: FAQ, i: number) => (
               <div
                 key={i}
                 className="rounded-2xl overflow-hidden"

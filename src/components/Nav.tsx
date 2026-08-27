@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import logow from '/logo.png'
 import logoc from '/logo-2.png'
 
-import { WHATSAPP } from '../REUSABLES'
+import { WHATSAPP, type WhatsAppItem } from '../REUSABLES'
 
-const WA_LINK = WHATSAPP.find((w) => w.request === 'order')?.message || ''
+const WA_LINK = WHATSAPP.find((w: WhatsAppItem) => w.request === 'order')?.message || ''
 
 const links = [
   { label: 'Home', to: '/' },

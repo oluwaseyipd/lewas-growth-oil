@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import HaloArc from '../components/HaloArc'
 import WAButton from '../components/WAButton'
-import { faqGroups, WHATSAPP } from '../REUSABLES'
+import { faqGroups, WHATSAPP, type WhatsAppItem, type FAQGroup, type FAQ as FAQType } from '../REUSABLES'
 
 const tips = [
   {
@@ -40,7 +40,7 @@ export default function FAQ() {
           <p className="font-body text-base mt-6 leading-relaxed" style={{ color: '#EFD3C5', opacity: 0.9 }}>
             Can&apos;t find your answer below?{' '}
             <a
-              href={WHATSAPP.find((w) => w.request === 'enquiry')?.message || ''}
+              href={WHATSAPP.find((w: WhatsAppItem) => w.request === 'enquiry')?.message || ''}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#EF00C2', borderBottom: '1px solid #EF00C2', paddingBottom: 1 }}
@@ -56,7 +56,7 @@ export default function FAQ() {
       {/* FAQ groups */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-16">
-          {faqGroups.map((group) => (
+          {faqGroups.map((group: FAQGroup) => (
             <div key={group.group}>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-2xl">{group.icon}</span>
@@ -65,7 +65,7 @@ export default function FAQ() {
                 </h2>
               </div>
               <div className="space-y-3">
-                {group.items.map((item, i) => {
+                {group.items.map((item: FAQType, i: number) => {
                   const key = `${group.group}-${i}`
                   return (
                     <div
